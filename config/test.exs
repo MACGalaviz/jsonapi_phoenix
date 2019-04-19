@@ -12,7 +12,7 @@ config :logger, level: :warn
 # Configure your database
 config :jsonapi_phoenix, JsonapiPhoenix.Repo,
   username: "postgres",
-  password: "postgres",
+  password: "root",
   database: "jsonapi_phoenix_test",
   hostname: "localhost",
   pool: Ecto.Adapters.SQL.Sandbox

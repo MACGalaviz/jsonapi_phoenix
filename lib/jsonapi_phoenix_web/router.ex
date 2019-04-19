@@ -13,14 +13,16 @@ defmodule JsonapiPhoenixWeb.Router do
     plug :accepts, ["json"]
   end
 
-  scope "/", JsonapiPhoenixWeb do
-    pipe_through :browser
+  # scope "/", JsonapiPhoenixWeb do
+  #   pipe_through :browser
 
-    get "/", PageController, :index
-  end
+  #   get "/", PageController, :index
+  # end
 
   # Other scopes may use custom stacks.
-  # scope "/api", JsonapiPhoenixWeb do
-  #   pipe_through :api
-  # end
+  scope "/api", JsonapiPhoenixWeb do
+    pipe_through :api
+
+    resources "/projects", ProjectController, only: [:index, :show]
+  end
 end
